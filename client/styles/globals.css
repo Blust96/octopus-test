@@ -8,6 +8,10 @@
   --sohoLights: #f050f8;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
