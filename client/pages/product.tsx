@@ -1,10 +1,14 @@
 import { useQuery } from '@tanstack/react-query'
 import request from 'graphql-request'
-import type { InferGetServerSidePropsType } from 'next'
+import type { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 
 import { API_ENDPOINT } from '@/config/api'
 import { graphql } from '@/gql'
 import type { QueryProductByIdQuery } from '@/gql/graphql'
+
+import type { PageProps } from './_app'
+
+type ProductPageProps = PageProps<{ product: QueryProductByIdQuery }>
 
 const queryProductById = graphql(`
   query queryProductById($id: ID!) {
@@ -39,7 +43,7 @@ export default function Product({
   return <div>{data?.Product?.name}</div>
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps<ProductPageProps> = async () => {
   const product = await getProductById('1')
-  return { props: { product } }
+  return { props: { product, title: product?.Product?.name || '' } }
 }

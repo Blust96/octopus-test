@@ -1,0 +1,18 @@
+.header {
+  padding: var(--spacing-md) 0;
+  background-color: var(--siphon);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+}
+
+.basket {
+  width: 32px;
+}
