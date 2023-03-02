@@ -14,3 +14,6 @@
   background-color: var(--plum);
 }
 
+.button:not(:disabled):hover {
+  border-radius: var(--radius-lg);
+}
