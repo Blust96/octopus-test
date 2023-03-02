@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import type { AppProps as NextAppProps } from 'next/app'
 
 import { PageLayout } from '@/components/page-layout'
-import { basketContext, BasketContextProvider } from '@/context/basket'
+import { basketContext, BasketContextProvider } from '@/providers/BasketProvider'
 
 const queryClient = new QueryClient()
 

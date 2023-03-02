@@ -6,13 +6,13 @@ import type { Product } from '@/gql/graphql'
 
 interface BasketContext {
   itemCount: number
-  addProduct: (product: Product, quantity: number) => void
+  addItem: (product: Product, quantity: number) => void
 }
 
 const basketContext = createContext<BasketContext>({
   itemCount: 0,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  addProduct: () => {},
+  addItem: () => {},
 })
 
 interface BasketItem {
@@ -28,9 +28,9 @@ interface BasketContextProviderProps {
 export function BasketContextProvider({ context, children }: BasketContextProviderProps) {
   const [items, setItems] = useState<BasketItem[]>([])
 
-  const itemCount = useMemo(() => items.reduce((prev, curr) => prev + curr.quantity, 0), [items])
+  const itemCount = useMemo(() => items.reduce((count, item) => count + item.quantity, 0), [items])
 
-  const addProduct = useCallback(
+  const addItem = useCallback(
     (product: Product, quantity: number): void => {
       const newItems = [...items]
       const existingProductIdx = newItems.findIndex((p) => p.product.id === product.id)
@@ -46,7 +46,7 @@ export function BasketContextProvider({ context, children }: BasketContextProvid
     [items],
   )
 
-  return <context.Provider value={{ itemCount, addProduct }}>{children}</context.Provider>
+  return <context.Provider value={{ itemCount, addItem }}>{children}</context.Provider>
 }
 
 export { basketContext }

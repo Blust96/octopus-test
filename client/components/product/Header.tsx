@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 
-import { basketContext } from '@/context/basket'
 import type { Product } from '@/gql/graphql'
+import { basketContext } from '@/providers/BasketProvider'
 
 import { Button } from '../elements'
 import { Container } from '../layout'
@@ -14,7 +14,7 @@ interface HeaderProps {
 }
 
 export function Header({ product }: HeaderProps) {
-  const { addProduct } = useContext(basketContext)
+  const { addItem } = useContext(basketContext)
   const [quantity, setQuantity] = useState(DEFAULT_QUANTITY)
 
   const infos = `${product.power} // Packet of ${product.quantity}`
@@ -28,7 +28,7 @@ export function Header({ product }: HeaderProps) {
   }
 
   const onProductAddition = (): void => {
-    addProduct(product, quantity)
+    addItem(product, quantity)
     setQuantity(DEFAULT_QUANTITY)
   }
 

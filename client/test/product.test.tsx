@@ -2,7 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { fireEvent, render } from '@testing-library/react'
 
 import { PageLayout } from '@/components/page-layout'
-import { basketContext, BasketContextProvider } from '@/context/basket'
+import { basketContext, BasketContextProvider } from '@/providers/BasketProvider'
 import type { Product } from '@/gql/graphql'
 
 import ProductPage from '../pages/product'

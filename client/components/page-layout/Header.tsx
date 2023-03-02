@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 
-import { basketContext } from '@/context/basket'
+import { basketContext } from '@/providers/BasketProvider'
 
 import { Container } from '../layout'
 import style from './Header.module.css'
