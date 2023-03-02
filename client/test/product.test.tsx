@@ -43,14 +43,15 @@ test('should be able to increase and decrease product quantity', async () => {
   const { getByText, getByTitle } = render(<Subject />)
 
   const increaseQuantity = getByText('+')
+  const decreaseQuantity = getByText('-')
 
   const currentQuantity = getByTitle('Current quantity')
   expect(currentQuantity).toHaveTextContent('1')
 
+  expect(decreaseQuantity).toBeDisabled()
+
   fireEvent.click(increaseQuantity)
   expect(currentQuantity).toHaveTextContent('2')
-
-  const decreaseQuantity = getByText('-')
 
   fireEvent.click(decreaseQuantity)
   expect(currentQuantity).toHaveTextContent('1')
