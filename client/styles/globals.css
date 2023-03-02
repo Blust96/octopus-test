@@ -17,6 +17,9 @@
   --radius-xl: 16px;
 
   --transition-delay: 0.3s;
+
+  --z_index-content: 0;
+  --z_index-content--over: 5;
 }
 
 * {

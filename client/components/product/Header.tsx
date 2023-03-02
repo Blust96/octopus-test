@@ -1,22 +1,35 @@
+import { useContext, useState } from 'react'
+
+import { basketContext } from '@/context/basket'
 import type { Product } from '@/gql/graphql'
 
 import { Button } from '../elements'
 import { Container } from '../layout'
 import style from './Header.module.css'
 
+const DEFAULT_QUANTITY = 1
+
 interface HeaderProps {
   product: Product
 }
 
 export function Header({ product }: HeaderProps) {
+  const { addProduct } = useContext(basketContext)
+  const [quantity, setQuantity] = useState(DEFAULT_QUANTITY)
+
   const infos = `${product.power} // Packet of ${product.quantity}`
 
   const decrementQuantity = (): void => {
-    // TODO: decrement quantity
+    setQuantity((prevQuantity) => prevQuantity - 1)
   }
 
   const incrementQuantity = (): void => {
-    // TODO: increment quantity
+    setQuantity((prevQuantity) => prevQuantity + 1)
+  }
+
+  const onProductAddition = (): void => {
+    addProduct(product, quantity)
+    setQuantity(DEFAULT_QUANTITY)
   }
 
   return (
@@ -36,17 +49,23 @@ export function Header({ product }: HeaderProps) {
 
               <div className={style.input}>
                 <span className={style.input__label}>Qty</span>
-                <Button onClick={decrementQuantity} className={style.input__cta}>
+                <Button
+                  disabled={quantity === 1}
+                  onClick={decrementQuantity}
+                  className={style.input__cta}
+                >
                   -
                 </Button>
-                <span className={style.input__value}>1</span>
+                <span title="Current quantity" className={style.input__value}>
+                  {quantity}
+                </span>
                 <Button onClick={incrementQuantity} className={style.input__cta}>
                   +
                 </Button>
               </div>
             </div>
 
-            <Button>Add to cart</Button>
+            <Button onClick={onProductAddition}>Add to cart</Button>
           </div>
         </div>
       </Container>
