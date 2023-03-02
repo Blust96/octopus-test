@@ -1,0 +1,16 @@
+.button {
+  color: var(--siphon);
+  background-color: var(--sohoLights);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  font-size: 0.9em;
+  font-weight: 500;
+  text-align: center;
+  transition: var(--transition-delay);
+}
+
+.button:disabled {
+  color: var(--ice);
+  background-color: var(--plum);
+}
+

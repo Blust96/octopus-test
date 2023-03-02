@@ -43,7 +43,7 @@ export type MutationCreateProductArgs = {
   model_code: Scalars['String'];
   name: Scalars['String'];
   power: Scalars['String'];
-  price: Scalars['Int'];
+  price: Scalars['Float'];
   quantity: Scalars['Int'];
   weight: Scalars['Int'];
   width: Scalars['Float'];
@@ -66,7 +66,7 @@ export type MutationUpdateProductArgs = {
   model_code?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
   power?: InputMaybe<Scalars['String']>;
-  price?: InputMaybe<Scalars['Int']>;
+  price?: InputMaybe<Scalars['Float']>;
   quantity?: InputMaybe<Scalars['Int']>;
   weight?: InputMaybe<Scalars['Int']>;
   width?: InputMaybe<Scalars['Float']>;
@@ -84,7 +84,7 @@ export type Product = {
   model_code: Scalars['String'];
   name: Scalars['String'];
   power: Scalars['String'];
-  price: Scalars['Int'];
+  price: Scalars['Float'];
   quantity: Scalars['Int'];
   weight: Scalars['Int'];
   width: Scalars['Float'];
@@ -120,12 +120,12 @@ export type ProductFilter = {
   name_neq?: InputMaybe<Scalars['String']>;
   power?: InputMaybe<Scalars['String']>;
   power_neq?: InputMaybe<Scalars['String']>;
-  price?: InputMaybe<Scalars['Int']>;
-  price_gt?: InputMaybe<Scalars['Int']>;
-  price_gte?: InputMaybe<Scalars['Int']>;
-  price_lt?: InputMaybe<Scalars['Int']>;
-  price_lte?: InputMaybe<Scalars['Int']>;
-  price_neq?: InputMaybe<Scalars['Int']>;
+  price?: InputMaybe<Scalars['Float']>;
+  price_gt?: InputMaybe<Scalars['Float']>;
+  price_gte?: InputMaybe<Scalars['Float']>;
+  price_lt?: InputMaybe<Scalars['Float']>;
+  price_lte?: InputMaybe<Scalars['Float']>;
+  price_neq?: InputMaybe<Scalars['Float']>;
   q?: InputMaybe<Scalars['String']>;
   quantity?: InputMaybe<Scalars['Int']>;
   quantity_gt?: InputMaybe<Scalars['Int']>;
@@ -158,7 +158,7 @@ export type ProductInput = {
   model_code: Scalars['String'];
   name: Scalars['String'];
   power: Scalars['String'];
-  price: Scalars['Int'];
+  price: Scalars['Float'];
   quantity: Scalars['Int'];
   weight: Scalars['Int'];
   width: Scalars['Float'];

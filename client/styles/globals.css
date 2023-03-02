@@ -7,9 +7,16 @@
   --siphon: #100030;
   --sohoLights: #f050f8;
 
-  --spacing-sm: 12px;
+  --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-xl: 16px;
+
+  --transition-delay: 0.3s;
 }
 
 * {
@@ -26,6 +33,27 @@ body {
 
 body {
   background: var(--siphon);
+}
+
+button {
+  -webkit-appearance: none;
+  border-radius: 0;
+  text-align: inherit;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.6em;
 }
 
 figure {
