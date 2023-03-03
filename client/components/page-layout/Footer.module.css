@@ -1,0 +1,5 @@
+.footer {
+  padding: var(--spacing-md) 0;
+  background-color: var(--hemocyanin);
+  font-size: 0.8rem;
+}

@@ -1,0 +1,36 @@
+.header {
+  position: sticky;
+  top: 0;
+  padding: var(--spacing-md) 0;
+  background-color: var(--siphon);
+  z-index: var(--z_index-content--over);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+}
+
+.basket {
+  position: relative;
+}
+
+.basket__img {
+  width: 32px;
+}
+
+.basket__badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 0.6em;
+  background-color: var(--sohoLights);
+  color: var(--siphon);
+  padding: 6px;
+  border-radius: var(--radius-md);
+}

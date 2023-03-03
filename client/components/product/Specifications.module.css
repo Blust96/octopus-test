@@ -1,0 +1,23 @@
+.specifications {
+  background-color: var(--siphon);
+  padding: var(--spacing-md) 0;
+}
+
+.content {
+  display: grid;
+}
+
+.content p {
+  display: flex;
+  align-items: center;
+}
+
+.content p > span {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
