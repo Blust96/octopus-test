@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "yarn server & yarn server-graphql & next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "yarn server & next start",
     "server": "yarn run json-graphql-server ../server/db.js --p 3002",
     "server-graphql": "yarn graphql-codegen --watch",
     "test": "jest",
